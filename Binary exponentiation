@@ -17,3 +17,21 @@ int mod=1e9+7;
  	  }
  	  return ans;
  }
+//moduler binary exponentiation
+long long BEMOd(long long b,long long p )
+ {
+ 	long long ans=1;
+ 	while(p)
+ 	{
+ 		if(p&1)
+ 		{
+ 			p=p-1;
+ 			ans=((ans%mod)*(b%mod))%mod;
+ 		}
+ 		else
+ 		{
+ 			p=p/2;
+ 			b=((b%mod)*(b%mod))%mod;
+ 		}
+ 	}return ans%mod;
+ }
